@@ -1,5 +1,15 @@
+import TodoList from "./TodoList";
+
 function App() {
-  return <h1>Example Heading 1!</h1>;
+  return (
+    <>
+      <TodoList />;
+      <input type="text" />
+      <button>Add</button>
+      <button>Clear</button>
+      <div>Remaining todos:</div>
+    </>
+  );
 }
 
 export default App;
