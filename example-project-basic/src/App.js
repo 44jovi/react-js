@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import TodoList from "./TodoList";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
   // Object destructuring
@@ -15,7 +16,9 @@ function App() {
     // Avoid adding empty todos
     if (name === "") return;
 
-    // Implement setTodos here
+    setTodos((previousTodos) => {
+      return [...previousTodos, { id: uuidv4(), name: name, done: true }];
+    });
 
     // Reset input box to empty
     todoName.current.value = null;
