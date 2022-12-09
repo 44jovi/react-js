@@ -43,6 +43,11 @@ function App() {
     setTodos(newTodos);
   }
 
+  function clearDoneTodos() {
+    const newTodos = todos.filter((todo) => !todo.done);
+    setTodos(newTodos);
+  }
+
   return (
     <>
       <div>World's Best Ever Todo List App</div>
@@ -50,8 +55,8 @@ function App() {
       <TodoList todoList={todos} toggleTodoStatus={toggleTodoStatus} />
       <input ref={todoName} type="text" />
       <button onClick={addTodo}>Add</button>
-      <button>Clear</button>
-      <div>Remaining todos: {todos.length}</div>
+      <button onClick={clearDoneTodos}>Clear completed</button>
+      <div>Remaining todos: {todos.filter((todo) => !todo.done).length}</div>
     </>
   );
 }
