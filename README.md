@@ -1,3 +1,7 @@
-# About
+# React.js
 
-Personal reference/snippets/projects for React.js.
+## About
+
+- Personal reference/snippets/projects for React.js.
+
+---
