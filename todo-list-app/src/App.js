@@ -35,11 +35,19 @@ function App() {
     todoName.current.value = null;
   }
 
+  function toggleTodoStatus(id) {
+    const newTodos = [...todos];
+    const todo = newTodos.find((todo) => todo.id === id);
+    // Toggle true/false
+    todo.done = !todo.done;
+    setTodos(newTodos);
+  }
+
   return (
     <>
-      <div>World's Best Ever Todo List</div>
+      <div>World's Best Ever Todo List App</div>
       <hr></hr>
-      <TodoList todoList={todos} />
+      <TodoList todoList={todos} toggleTodoStatus={toggleTodoStatus} />
       <input ref={todoName} type="text" />
       <button onClick={addTodo}>Add</button>
       <button>Clear</button>
